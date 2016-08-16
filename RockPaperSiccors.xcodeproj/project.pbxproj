@@ -12,6 +12,10 @@
 		438EA6E01D63483800B46FA6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 438EA6DE1D63483800B46FA6 /* Main.storyboard */; };
 		438EA6E21D63483800B46FA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 438EA6E11D63483800B46FA6 /* Assets.xcassets */; };
 		438EA6E51D63483800B46FA6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 438EA6E31D63483800B46FA6 /* LaunchScreen.storyboard */; };
+		438EA6ED1D63498E00B46FA6 /* PlayerVSCompy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438EA6EC1D63498E00B46FA6 /* PlayerVSCompy.swift */; };
+		438EA6EF1D637ED100B46FA6 /* Opening ScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438EA6EE1D637ED100B46FA6 /* Opening ScreenViewController.swift */; };
+		438EA6F11D6387B900B46FA6 /* LizardSpockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438EA6F01D6387B900B46FA6 /* LizardSpockViewController.swift */; };
+		438EA6F31D638DC500B46FA6 /* lizardSpockVSCompy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438EA6F21D638DC500B46FA6 /* lizardSpockVSCompy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		438EA6E11D63483800B46FA6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		438EA6E41D63483800B46FA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		438EA6E61D63483800B46FA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		438EA6EC1D63498E00B46FA6 /* PlayerVSCompy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerVSCompy.swift; sourceTree = "<group>"; };
+		438EA6EE1D637ED100B46FA6 /* Opening ScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Opening ScreenViewController.swift"; sourceTree = "<group>"; };
+		438EA6F01D6387B900B46FA6 /* LizardSpockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LizardSpockViewController.swift; sourceTree = "<group>"; };
+		438EA6F21D638DC500B46FA6 /* lizardSpockVSCompy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = lizardSpockVSCompy.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +63,11 @@
 			isa = PBXGroup;
 			children = (
 				438EA6DA1D63483800B46FA6 /* AppDelegate.swift */,
+				438EA6EE1D637ED100B46FA6 /* Opening ScreenViewController.swift */,
 				438EA6DC1D63483800B46FA6 /* ViewController.swift */,
+				438EA6EC1D63498E00B46FA6 /* PlayerVSCompy.swift */,
+				438EA6F01D6387B900B46FA6 /* LizardSpockViewController.swift */,
+				438EA6F21D638DC500B46FA6 /* lizardSpockVSCompy.swift */,
 				438EA6DE1D63483800B46FA6 /* Main.storyboard */,
 				438EA6E11D63483800B46FA6 /* Assets.xcassets */,
 				438EA6E31D63483800B46FA6 /* LaunchScreen.storyboard */,
@@ -135,7 +147,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				438EA6F31D638DC500B46FA6 /* lizardSpockVSCompy.swift in Sources */,
+				438EA6F11D6387B900B46FA6 /* LizardSpockViewController.swift in Sources */,
+				438EA6EF1D637ED100B46FA6 /* Opening ScreenViewController.swift in Sources */,
 				438EA6DD1D63483800B46FA6 /* ViewController.swift in Sources */,
+				438EA6ED1D63498E00B46FA6 /* PlayerVSCompy.swift in Sources */,
 				438EA6DB1D63483800B46FA6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

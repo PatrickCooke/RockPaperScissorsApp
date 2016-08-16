@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  LizardSpockViewController.swift
 //  RockPaperSiccors
 //
 //  Created by Patrick Cooke on 8/16/16.
@@ -8,34 +8,36 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class LizardSpockViewController: UIViewController {
 
-    @IBOutlet weak var resultLabel: UILabel!
-    @IBOutlet weak var rock: UIButton!
-    @IBOutlet weak var paper: UIButton!
-    @IBOutlet weak var scissors: UIButton!
-    @IBOutlet weak var resetButton: UIButton!
+    let gameAI = lizardSpockVSCompy()
+    
     @IBOutlet weak var yourPickImage: UIImageView!
     @IBOutlet weak var phonePickImage: UIImageView!
+    @IBOutlet weak var rockButton: UIButton!
+    @IBOutlet weak var paperButton: UIButton!
+    @IBOutlet weak var scissorsButton: UIButton!
+    @IBOutlet weak var spockButton: UIButton!
+    @IBOutlet weak var lizardButton: UIButton!
+    @IBOutlet weak var resultLabel: UILabel!
     
-    let pVSc = PlayerVSCompy()
     
-    //MARK: - Action Methods
-    
-    @IBAction func reset(sender: UIButton) {
-        resetAll()
-    }
+    //MARK: - Interactivity Methods
     
     @IBAction func Play(sender: UIButton) {
         resetAll()
         if let playChoice = sender.titleLabel?.text?.lowercaseString {
-        pVSc.VScomputer(String(playChoice))
+            gameAI.VScomputer(String(playChoice))
             yourPickImage.image = UIImage(named: playChoice + "black")
         }
         
     }
     
-    //MARK: - Reoccuring Methods
+    @IBAction func resetButton() {
+        resetAll()
+    }
+
+    //MARK: - Clean Up Methods
     
     func resetAll() {
         resultLabel.text = ""
@@ -57,6 +59,14 @@ class ViewController: UIViewController {
         phonePickImage.image = UIImage(named: "scissorsblack")
     }
     
+    func spockpicked() {
+        phonePickImage.image = UIImage(named: "spockblack")
+    }
+    
+    func lizardpicked() {
+        phonePickImage.image = UIImage(named: "lizardblack")
+    }
+    
     func tie () {
         resultLabel.text = "It's a Tie"
     }
@@ -70,18 +80,21 @@ class ViewController: UIViewController {
         resultLabel.text = "You Lose"
         phonePickImage.backgroundColor = UIColor.redColor()
     }
+
     
     //MARK: - Life Cycle Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        resultLabel.text = "Rock, Paper or Scissors?"
+        resultLabel.text = ""
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(tie), name: "tie", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(player), name: "player", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(phone), name: "phone", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(rockpicked), name: "rock", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(paperpicked), name: "paper", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(scissorspicked), name: "scissors", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(spockpicked), name: "spock", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(lizardpicked), name: "lizard", object: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -89,4 +102,3 @@ class ViewController: UIViewController {
     }
 
 }
-
