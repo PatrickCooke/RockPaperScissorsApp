@@ -9,6 +9,7 @@
 import UIKit
 
 class PlayerVSCompy: NSObject {
+    
     static let sharedInstance = PlayerVSCompy()
     
     func VScomputer(playerChoice: String) {
@@ -31,37 +32,7 @@ class PlayerVSCompy: NSObject {
         defer { compare(playerChoice, computer: computerChoice)
         }
     }
-    /*
-     func compare(player: String, computer: String) {
-     if(player == computer) {
-     print("The result is a tie");
-     }
-     
-     else if (player == "rock") {
-     if (computer == "scissors") {
-     print( "Player wins")
-     } else if (computer == "paper") {
-     print("iPhone wins")
-     }
-     }
-     
-     else if (player == "paper") {
-     if (computer == "rock") {
-     print("iPhone wins")
-     } else {
-     print( "Player wins")
-     }
-     }
-     
-     else if (player == "scissors") {
-     if (computer == "rock") {
-     print("iPhone wins")
-     } else {
-     print("Player wins")
-     }
-     }
-     }
-     */
+
     func compare(player: String, computer: String) {
         if(player == computer) {
             print("It's a Tie")

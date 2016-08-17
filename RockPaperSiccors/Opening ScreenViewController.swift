@@ -16,7 +16,7 @@ class Opening_ScreenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //RPSLizardSpockButton.enabled = false
+        
     }
 
     override func didReceiveMemoryWarning() {

@@ -17,6 +17,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var resetButton: UIButton!
     @IBOutlet weak var yourPickImage: UIImageView!
     @IBOutlet weak var phonePickImage: UIImageView!
+    @IBOutlet weak var winLabel: UILabel!
+    @IBOutlet weak var tieLabel: UILabel!
+    @IBOutlet weak var lossLabel: UILabel!
+    
+    var winScore = 0
+    var tieScore = 0
+    var lossScore = 0
+
     
     let pVSc = PlayerVSCompy()
     
@@ -27,7 +35,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func Play(sender: UIButton) {
-        resetAll()
+        resetSome()
         if let playChoice = sender.titleLabel?.text?.lowercaseString {
         pVSc.VScomputer(String(playChoice))
             yourPickImage.image = UIImage(named: playChoice + "black")
@@ -38,6 +46,20 @@ class ViewController: UIViewController {
     //MARK: - Reoccuring Methods
     
     func resetAll() {
+        resultLabel.text = ""
+        phonePickImage.backgroundColor = UIColor.clearColor()
+        yourPickImage.backgroundColor = UIColor.clearColor()
+        phonePickImage.image = nil
+        yourPickImage.image = nil
+        winLabel.text = "0"
+        tieLabel.text = "0"
+        lossLabel.text = "0"
+        winScore = 0
+        tieScore = 0
+        lossScore = 0
+    }
+    
+    func resetSome() {
         resultLabel.text = ""
         phonePickImage.backgroundColor = UIColor.clearColor()
         yourPickImage.backgroundColor = UIColor.clearColor()
@@ -59,16 +81,22 @@ class ViewController: UIViewController {
     
     func tie () {
         resultLabel.text = "It's a Tie"
+        tieScore += 1
+        tieLabel.text = "\(tieScore)"
     }
     
     func player() {
         resultLabel.text = "You Win!"
         yourPickImage.backgroundColor = UIColor.redColor()
+        winScore += 1
+        winLabel.text = "\(winScore)"
     }
     
     func phone() {
         resultLabel.text = "You Lose"
         phonePickImage.backgroundColor = UIColor.redColor()
+        lossScore += 1
+        lossLabel.text = "\(lossScore)"
     }
     
     //MARK: - Life Cycle Methods
@@ -82,6 +110,9 @@ class ViewController: UIViewController {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(rockpicked), name: "rock", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(paperpicked), name: "paper", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(scissorspicked), name: "scissors", object: nil)
+        winLabel.text = "0"
+        tieLabel.text = "0"
+        lossLabel.text = "0"
     }
 
     override func didReceiveMemoryWarning() {
